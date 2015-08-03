@@ -23,6 +23,8 @@ ADD scripts/start-kafka.sh /usr/bin/start-kafka.sh
 ADD supervisor/kafka.conf /etc/supervisor/conf.d/kafka.conf
 ADD supervisor/zookeeper.conf /etc/supervisor/conf.d/zookeeper.conf
 
+ADD config/server.properties $KAFKA_HOME/config/server.properties
+ADD config/zookeeper.properties $KAFKA_HOME/config/zookeeper.properties
 
 ADD scripts/entrypoint.sh /usr/bin/entrypoint.sh
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
